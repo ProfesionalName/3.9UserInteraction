@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel = "stylesheet" href = "style.css">
+    <title>3.9 Clicker Game</title>
+</head>
+<body>
+<div class = 'container'>
+    <div class = 'content'>
+        <div class = 'row'>
+            <div>
+               <label>Click</label>
+                <button id = 'click'>Clicker</button>
+                <p id = 'score'></p>
+            </div>
+            <div>
+                <label>Shop</label>
+            </div>
+            <div>
+                <label>Restart</label>
+                <button id = 'clear'>Clear</button>
+            </div>
+            <div>
+                <label>Avatar</label>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    const click = document.getElementById('click');
+    const score = document.getElementById('score');
+    const clear = document.getElementById('clear');
+    const number = 1;
+
+
+    click.addEventListener('click', function(e){
+
+        let game = document.createElement('p');
+        game.innerHTML = `Your Score is ${number}`;
+        score.insertAdjacentElement('afterend', game);
+    })
+
+    clear.addEventListener('click', function(e){
+        
+    })
+</script>
+</body>
+</html>
