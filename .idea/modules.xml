@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/3.9UserInteractionProject.iml" filepath="$PROJECT_DIR$/.idea/3.9UserInteractionProject.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../Unit3Notes/.idea/Unit3Notes.iml" filepath="$PROJECT_DIR$/../Unit3Notes/.idea/Unit3Notes.iml" />
     </modules>
   </component>
 </project>
