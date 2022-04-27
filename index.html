@@ -42,10 +42,6 @@
     const p = document.getElementById('p');
     const ans = document.getElementById('ans');
     const clear = document.getElementById('clear');
-    // const sum = a + b;
-    // const difference = a - b;
-    // const product = a * b;
-    // const quotient = a / b;
 
     ans.addEventListener('click', function(e){
         let a = a.value;
@@ -57,7 +53,7 @@
         const product = a.value * b.value;
         const quotient = a.value / b.value;
 
-        if(symbol == '+'){
+        if(symbol.value == '+'){
             p.textContent = sum;
         }
     })
@@ -68,6 +64,7 @@
         b.value = "";
         p.textContent = "";
     })
+
 </script>
 </body>
 </html>
