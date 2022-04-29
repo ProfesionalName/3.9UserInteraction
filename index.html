@@ -12,7 +12,7 @@
         <div class = 'row'>
             <div>
                 <label for = 'a'>Number</label>
-                <input type = 'number' id = 'a' name = 'a' style = 'width: 100px;'>
+                <input type = 'text' id = 'a' name = 'a' style = 'width: 100px;'>
             </div>
             <div>
                 <label for = "symbol">Symbol</label>
@@ -21,11 +21,12 @@
                         <option value = "sub">-</option>
                         <option value = "mul">*</option>
                         <option value = "div">/</option>
+                        <option value = "per">%</option>
                     </select>
             </div>
             <div>
                 <label for = 'b'>Number</label>
-                <input type = 'number' id = 'b' name = 'b' style = 'width: 100px;'>
+                <input type = 'text' id = 'b' name = 'b' style = 'width: 100px;'>
             </div>
             <div>
                 <label for = 'ans'>Calculate</label>
@@ -45,18 +46,41 @@
     const clear = document.getElementById('clear');
 
     ans.addEventListener('click', function(e){
-        let a = a.value;
-        let symbol = symbol.value;
-        let b = b.value;
 
-        const sum = a.value + b.value;
-        const difference = a.value - b.value;
-        const product = a.value * b.value;
-        const quotient = a.value / b.value;
+        let aValue = +a.value;
+        let bValue = +b.value;
+        let operation = symbol.value;
+        let sum = aValue + bValue;
+        let difference = aValue - bValue;
+        let product = aValue * bValue;
+        let quotient = aValue / bValue;
+        let percentage = aValue / bValue * 100;
 
-        if(symbol.value == "+"){
-             = `The sum is ${sum}`;
+        if(operation == "add"){
+            const adding = document.createElement('h3');
+            adding.innerHTML = `${a.value} + ${b.value} = ${sum}`;
+            p.insertAdjacentElement('afterend', adding);
+        }else if(operation == "sub"){
+            const subtract = document.createElement('h3');
+            subtract.innerHTML = `${a.value} - ${b.value} = ${difference}`;
+            p.insertAdjacentElement('afterend', subtract);
+        }else if(operation == "mul") {
+            const multiply = document.createElement('h3');
+            multiply.innerHTML = `${a.value} * ${b.value} = ${product}`;
+            p.insertAdjacentElement('afterend', multiply);
+        }else if(operation == "div") {
+            const divide = document.createElement('h3');
+            divide.innerHTML = `${a.value} / ${b.value} = ${quotient}`;
+            p.insertAdjacentElement('afterend', divide);
+        }else if(operation == "per") {
+            const percent = document.createElement('h3');
+            percent.innerHTML = `${a.value} % ${b.value} = ${percentage}`;
+            p.insertAdjacentElement('afterend', percent);
         }
+
+        a.value = "";
+        symbol.value = "";
+        b.value = "";
     })
 
     clear.addEventListener('click', function(e){
